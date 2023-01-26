@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,47 +12,63 @@ body{
     padding: 0 10%;
 }
 
-header{
+header {
     align-self: center;
     width: max-content;
     margin-bottom: 20px;
     margin-top: 10px;
 }
 
-header > img{
+header>img {
     max-height: 150px;
     max-width: calc(100vw - 40px);
 }
 
-summary{
+summary {
     font-size: 24px;
     font-weight: bold;
     font-family: 'Roboto';
     cursor: pointer;
+    user-select: none;
 }
 
-p{
+summary::marker {
+    content: "";
+}
+
+details>summary::before {
+    content: url(./midia/expand.svg);
+    margin-right: 10px;
+}
+
+details[open]>summary::before {
+    content: url(./midia/colapse.svg);
+    margin-right: 10px;
+}
+
+p {
     margin: 10px auto;
 }
 
-details{
+details {
     display: block;
     font-family: 'Calibri';
     font-size: 18px;
 }
 
-details h3{
+details h3 {
     font-size: 22px;
 }
 
-details + details{
+details+details {
     margin-top: 10px;
 }
 
-summary + h3{
+summary+h3 {
     margin-top: 10px;
 }
 
-a, a:visited{
+a,
+a:visited {
     color: blue;
 }
