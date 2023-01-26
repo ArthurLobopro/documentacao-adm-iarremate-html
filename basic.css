@@ -11,8 +11,7 @@ body {
     flex-direction: column;
     justify-content: left;
     padding: 0 10%;
-    font-family: 'Calibri';
-
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", arial, sans-serif;
 }
 
 body:has(dialog) {
@@ -38,7 +37,7 @@ header>img {
 summary {
     font-size: 24px;
     font-weight: bold;
-    font-family: 'Roboto';
+    /* font-family: 'Roboto'; */
     cursor: pointer;
     user-select: none;
 }
@@ -58,6 +57,7 @@ details[open]>summary::before {
 }
 
 p {
+    font-size: 10pt;
     margin: 10px auto;
 }
 
@@ -67,7 +67,7 @@ details {
 }
 
 details h3 {
-    font-size: 22px;
+    font-size: 16pt;
 }
 
 details h3:not(:nth-child(2)) {
@@ -103,7 +103,8 @@ details.image-container[open] {
 }
 
 details.image-container>summary {
-    font-size: 16px
+    font-size: 16px;
+    color: #1f6feb;
 }
 
 details.image-container>summary::marker {
@@ -113,6 +114,7 @@ details.image-container>summary::marker {
 details.image-container>summary::before {
     content: var(--image) " " var(--sufix);
     margin-right: 5px;
+    color: #1f6feb;
 }
 
 details.image-container>img {
