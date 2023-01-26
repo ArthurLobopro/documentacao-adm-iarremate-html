@@ -68,6 +68,7 @@ details {
 
 details h3 {
     font-size: 16pt;
+    margin: 20px 0;
 }
 
 details h3:not(:nth-child(2)) {
