@@ -37,12 +37,12 @@ summary::marker {
 }
 
 details>summary::before {
-    content: url(./midia/expand.svg);
+    content: url(./midia/icons/expand.svg);
     margin-right: 10px;
 }
 
 details[open]>summary::before {
-    content: url(./midia/colapse.svg);
+    content: url(./midia/icons/colapse.svg);
     margin-right: 10px;
 }
 
