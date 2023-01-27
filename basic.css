@@ -20,7 +20,6 @@ body:has(dialog) {
 
 header {
     align-self: center;
-    width: max-content;
     margin-bottom: 20px;
     margin-top: 10px;
 }
@@ -81,12 +80,14 @@ details h3:not(:nth-child(2)) {
     margin-top: 20px;
 }
 
-details+details {
-    margin-top: 20px;
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 details[open]+details {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 summary+h3 {
