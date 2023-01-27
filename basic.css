@@ -145,10 +145,9 @@ details.topic[open] {
     --marker: url(./midia/icons/colapse.svg);
 }
 
-details.topic>summary {
+details>summary {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 details.topic>summary::marker,
@@ -156,11 +155,60 @@ details.topic>summary::before {
     display: none;
 }
 
-details.topic>summary>.marker {
+details>summary>.marker {
     aspect-ratio: 1/1;
-    height: 30px;
+
     display: inline-flex;
     background-image: var(--marker);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+details.topic>summary>.marker {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+/*Image details*/
+details.image-container {
+    --marker: url(./midia/icons/see.svg);
+}
+
+details.image-container[open] {
+    --marker: url(./midia/icons/no-see.svg);
+}
+
+details.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+
+    --sufix: "Mostrar";
+    --marker: url(./midia/icons/see.svg);
+}
+
+details.image-container[open] {
+    --sufix: "Ocultar";
+    --marker: url(./midia/icons/no-see.svg);
+}
+
+details.image-container>summary {
+    font-size: 16px;
+    color: #1f6feb;
+}
+
+details.image-container>summary::before {
+    content: var(--marker) " " var(--sufix);
+    margin-right: 5px;
+    color: #1f6feb;
+}
+
+details.image-container>img {
+    max-width: 100%;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
 }
