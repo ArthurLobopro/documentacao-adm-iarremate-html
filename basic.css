@@ -1,3 +1,7 @@
+:root {
+    --tab-size: 30px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -55,6 +59,10 @@ details[open]>summary::before {
     margin-right: 10px;
 }
 
+details>p {
+    margin-left: var(--tab-size);
+}
+
 p,
 dd {
     font-size: 10pt;
@@ -62,7 +70,7 @@ dd {
 }
 
 dd {
-    margin-left: 26px;
+    margin-left: var(--tab-size);
 }
 
 details {
@@ -94,8 +102,12 @@ summary+h3 {
     margin-top: 10px;
 }
 
+dl {
+    padding-left: var(--tab-size);
+}
+
 dl details.image-container {
-    margin-left: 26px;
+    margin-left: var(--tab-size);
 }
 
 details.image-container {
@@ -117,10 +129,6 @@ details.image-container[open] {
 details.image-container>summary {
     font-size: 16px;
     color: #1f6feb;
-}
-
-details.image-container>summary::marker {
-    appearance: initial;
 }
 
 details.image-container>summary::before {
