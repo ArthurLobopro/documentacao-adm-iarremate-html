@@ -1,3 +1,7 @@
+:root {
+    --tab-size: 30px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +40,6 @@ header>img {
 summary {
     font-size: 24px;
     font-weight: bold;
-    /* font-family: 'Roboto'; */
     cursor: pointer;
     user-select: none;
 }
@@ -45,14 +48,8 @@ summary::marker {
     content: "";
 }
 
-details>summary::before {
-    content: url(./midia/icons/expand.svg);
-    margin-right: 10px;
-}
-
-details[open]>summary::before {
-    content: url(./midia/icons/colapse.svg);
-    margin-right: 10px;
+details>p {
+    margin-left: var(--tab-size);
 }
 
 p,
@@ -62,7 +59,7 @@ dd {
 }
 
 dd {
-    margin-left: 26px;
+    margin-left: var(--tab-size);
 }
 
 details {
@@ -94,46 +91,12 @@ summary+h3 {
     margin-top: 10px;
 }
 
+dl {
+    padding-left: var(--tab-size);
+}
+
 dl details.image-container {
-    margin-left: 26px;
-}
-
-details.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
-
-    --sufix: "Mostrar";
-    --image: url(./midia/icons/see.svg);
-}
-
-details.image-container[open] {
-    --sufix: "Ocultar";
-    --image: url(./midia/icons/no-see.svg);
-}
-
-details.image-container>summary {
-    font-size: 16px;
-    color: #1f6feb;
-}
-
-details.image-container>summary::marker {
-    appearance: initial;
-}
-
-details.image-container>summary::before {
-    content: var(--image) " " var(--sufix);
-    margin-right: 5px;
-    color: #1f6feb;
-}
-
-details.image-container>img {
-    max-width: 100%;
-    border: 1px solid black;
-    user-select: none;
-    cursor: pointer;
+    margin-left: var(--tab-size);
 }
 
 a,
@@ -171,4 +134,80 @@ dialog>.close-icon {
 
 dialog>.close-icon:hover * {
     fill: #ddd;
+}
+
+/*Topic details*/
+details.topic {
+    --marker: url(./midia/icons/expand.svg);
+}
+
+details.topic[open] {
+    --marker: url(./midia/icons/colapse.svg);
+}
+
+details>summary {
+    display: flex;
+    align-items: center;
+}
+
+details.topic>summary::marker,
+details.topic>summary::before {
+    display: none;
+}
+
+details>summary>.marker {
+    aspect-ratio: 1/1;
+
+    display: inline-flex;
+    background-image: var(--marker);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+details.topic>summary>.marker {
+    height: 30px;
+    width: 30px;
+}
+
+/*Image details*/
+details.image-container {
+    --marker: url(./midia/icons/see.svg);
+}
+
+details.image-container[open] {
+    --marker: url(./midia/icons/no-see.svg);
+}
+
+details.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+
+    --sufix: "Mostrar";
+    --marker: url(./midia/icons/see.svg);
+}
+
+details.image-container[open] {
+    --sufix: "Ocultar";
+    --marker: url(./midia/icons/no-see.svg);
+}
+
+details.image-container>summary {
+    font-size: 16px;
+    color: #1f6feb;
+}
+
+details.image-container>summary::before {
+    content: var(--marker) " " var(--sufix);
+    margin-right: 5px;
+    color: #1f6feb;
+}
+
+details.image-container>img {
+    max-width: 100%;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
 }
