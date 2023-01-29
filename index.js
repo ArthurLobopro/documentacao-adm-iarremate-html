@@ -1,10 +1,13 @@
 function imageViewModal(event) {
     const image = event.currentTarget
 
+    const image_to_append = image.cloneNode(true)
+    image_to_append.title = ""
+
     const closeIcon = makeCloseIcon()
 
     const modal = document.createElement("dialog")
-    modal.append(image.cloneNode(true))
+    modal.append(image_to_append)
 
     modal.append(closeIcon)
 
