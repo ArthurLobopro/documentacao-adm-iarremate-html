@@ -1,10 +1,10 @@
 /*Topic details*/
 details.topic {
-    --marker: url(../midia/icons/expand.svg);
+    --rotate: 0deg;
 }
 
 details.topic[open] {
-    --marker: url(../midia/icons/colapse.svg);
+    --rotate: -90deg;
 }
 
 details>summary {
@@ -17,11 +17,11 @@ details.topic>summary::before {
     display: none;
 }
 
-details>summary>.marker {
+details.topic>summary>.marker {
     aspect-ratio: 1/1;
 
     display: inline-flex;
-    background-image: var(--marker);
+    background-image: url(../midia/icons/expand.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -29,11 +29,7 @@ details>summary>.marker {
 details.topic>summary>.marker {
     height: 30px;
     width: 30px;
-    visibility: hidden;
-}
-
-details.topic>summary:hover>.marker {
-    visibility: visible;
+    transform: rotate(var(--rotate));
 }
 
 /*Image details*/
