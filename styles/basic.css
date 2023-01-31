@@ -14,8 +14,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    padding: 0 10%;
+    padding: 0 min(10vw, 40px);
     font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body:has(dialog) {
@@ -30,6 +31,7 @@ header {
 
 header>h1 {
     font-size: 40px;
+    text-align: center;
 }
 
 header>img {
@@ -68,7 +70,7 @@ details {
 }
 
 details dt {
-    font-size: 16pt;
+    font-size: 14pt;
     margin: 15px 0;
     font-weight: bold;
 }
@@ -136,4 +138,47 @@ dialog>.close-icon {
 
 dialog>.close-icon:hover * {
     fill: #ddd;
+}
+
+div#container {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 100%;
+    gap: 20px;
+    min-height: 100%;
+    justify-self: stretch;
+}
+
+nav {
+    border-right: 1px solid #000;
+    padding-right: 20px;
+    height: 100%;
+    font-size: 10pt;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav ul li {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+nav ul li::marker {
+    color: black;
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        display: none;
+    }
+
+    div#container {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+    }
 }

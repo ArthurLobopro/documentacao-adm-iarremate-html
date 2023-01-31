@@ -29,6 +29,11 @@ details>summary>.marker {
 details.topic>summary>.marker {
     height: 30px;
     width: 30px;
+    visibility: hidden;
+}
+
+details.topic>summary:hover>.marker {
+    visibility: visible;
 }
 
 /*Image details*/
