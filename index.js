@@ -40,13 +40,22 @@ function navigate(event) {
     const href = target.dataset.href
 
     if (href) {
-        const details = document.querySelector(`#${href}`)
-        details.open = true
+        const detail = document.querySelector(`#${href}`)
+        detail.open = true
 
-        window.scrollTo({
-            top: details.offsetTop,
-            behavior: "smooth"
+        // window.scrollTo({
+        //     top: details.offsetTop,
+        //     behavior: "smooth"
+        // })
+
+        const details = document.querySelectorAll("details.topic")
+        details.forEach(detail => {
+            if (detail.id !== href) {
+                detail.style.display = "none"
+            }
         })
+
+        detail.style.display = ""
     }
 }
 
