@@ -33,3 +33,23 @@ function makeCloseIcon(params) {
 
 const images = document.querySelectorAll("details>img")
 images.forEach(image => image.addEventListener("click", imageViewModal))
+
+function navigate(event) {
+    const target = event.currentTarget
+
+    const href = target.dataset.href
+
+    if (href) {
+        const details = document.querySelector(`#${href}`)
+        details.open = true
+
+        window.scrollTo({
+            top: details.offsetTop,
+            behavior: "smooth"
+        })
+    }
+}
+
+const nav_links = document.querySelectorAll("nav ul li")
+
+nav_links.forEach(link => link.addEventListener("click", navigate))
