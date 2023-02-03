@@ -7,6 +7,18 @@ details.topic[open] {
     --rotate: -90deg;
 }
 
+details.topic>summary {
+    padding: 4px;
+    border: solid #BA1827;
+    border-width: 0 0 1px 1px;
+
+    /* border-width: 1px 0 0 1px; */
+}
+
+details.topic[open]>summary {
+    border-width: 1px 0 0 1px;
+}
+
 details>summary {
     display: flex;
     align-items: center;
