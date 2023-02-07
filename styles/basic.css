@@ -154,6 +154,14 @@ nav {
     padding-right: 20px;
     height: 100%;
     font-size: 10pt;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav>.title {
+    text-align: center;
+    font-size: 18px;
 }
 
 nav ul {
