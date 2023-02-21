@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    padding: 0 min(10vw, 40px);
+    padding: 0 min(10vw, 25px);
     font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", arial, sans-serif;
     scroll-behavior: smooth;
 }
@@ -147,38 +147,6 @@ div#container {
     gap: 20px;
     min-height: 100%;
     justify-self: stretch;
-}
-
-nav {
-    border-right: 1px solid #000;
-    padding-right: 20px;
-    height: 100%;
-    font-size: 10pt;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-nav>.title {
-    text-align: center;
-    font-size: 18px;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 20vw;
-}
-
-nav ul li {
-    text-decoration: underline;
-    color: blue;
-    cursor: pointer;
-}
-
-nav ul li::marker {
-    color: black;
 }
 
 @media screen and (max-width: 800px) {
