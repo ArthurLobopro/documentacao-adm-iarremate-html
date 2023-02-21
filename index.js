@@ -34,31 +34,42 @@ function makeCloseIcon(params) {
 const images = document.querySelectorAll("details>img")
 images.forEach(image => image.addEventListener("click", imageViewModal))
 
-function navigate(event) {
-    const target = event.currentTarget
-
-    const href = target.dataset.href
-
-    if (href) {
-        const detail = document.querySelector(`#${href}`)
+function navigate(target) {
+    if (target) {
+        const detail = target
         detail.open = true
 
         // window.scrollTo({
-        //     top: details.offsetTop,
+        //     top: detail.offsetTop,
         //     behavior: "smooth"
         // })
 
         const details = document.querySelectorAll("details.topic")
-        details.forEach(detail => {
-            if (detail.id !== href) {
-                detail.style.display = "none"
-            }
-        })
+        details.forEach(detail => detail.style.display = "none")
 
         detail.style.display = ""
     }
 }
 
-const nav_links = document.querySelectorAll("nav ul li")
+function generate_topics() {
+    const details_topics = document.querySelectorAll("details.topic")
 
-nav_links.forEach(link => link.addEventListener("click", navigate))
+    details_topics.forEach(detail => {
+        const summary = detail.querySelector("summary")
+        const title = summary.textContent
+
+        const li = document.createElement("li")
+        li.textContent = title
+        li.dataset.href = detail.id
+        li.addEventListener("click", () => navigate(detail))
+
+        const nav = document.querySelector("nav ul")
+        nav.append(li)
+    })
+}
+
+generate_topics()
+
+// const nav_links = document.querySelectorAll("nav ul li")
+
+// nav_links.forEach(link => link.addEventListener("click", navigate))

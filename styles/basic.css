@@ -168,6 +168,7 @@ nav ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 20vw;
 }
 
 nav ul li {
